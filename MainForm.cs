@@ -104,5 +104,53 @@ namespace CV
                 MessageBox.Show(ex.Message, "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+
+        private void ShuiPing_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int width = opeBitmap.Width;
+                int height = opeBitmap.Height;
+                Bitmap bitmap = new Bitmap(width, height);
+                for (int x = 0;x < width;x++)
+                {
+                    for (int y = 0; y < height;y++)
+                    {
+                        bitmap.SetPixel(x,y,opeBitmap.GetPixel(width-x,y));
+                    }
+                }
+                curBitmap = new Bitmap(bitmap);
+                bitmap.Dispose();
+                this.newImg.Image = curBitmap;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"错误提示",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+            }
+        }
+
+        private void ChuiZhi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int width = opeBitmap.Width;
+                int height = opeBitmap.Height;
+                Bitmap bitmap = new Bitmap(width, height);
+                for (int x = 0; x < width; x++)
+                {
+                    for (int y = 0; y < height; y++)
+                    {
+                        bitmap.SetPixel(x, y, opeBitmap.GetPixel(x, height - y));
+                    }
+                }
+                curBitmap = new Bitmap(bitmap);
+                bitmap.Dispose();
+                this.newImg.Image = curBitmap;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }

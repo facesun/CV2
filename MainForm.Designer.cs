@@ -34,17 +34,17 @@
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenImg = new System.Windows.Forms.ToolStripMenuItem();
             this.CloseImg = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.newImg = new System.Windows.Forms.PictureBox();
             this.ExitWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.基本处理BToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.几何变换JToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.灰度变换HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PingYI = new System.Windows.Forms.ToolStripMenuItem();
             this.镜像XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShuiPing = new System.Windows.Forms.ToolStripMenuItem();
             this.ChuiZhi = new System.Windows.Forms.ToolStripMenuItem();
+            this.灰度变换HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.灰度化处理DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.newImg = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oldImg)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -93,37 +93,20 @@
             // OpenImg
             // 
             this.OpenImg.Name = "OpenImg";
-            this.OpenImg.Size = new System.Drawing.Size(180, 22);
+            this.OpenImg.Size = new System.Drawing.Size(118, 22);
             this.OpenImg.Text = "打开(&O)";
             this.OpenImg.Click += new System.EventHandler(this.OpenImg_Click);
             // 
             // CloseImg
             // 
             this.CloseImg.Name = "CloseImg";
-            this.CloseImg.Size = new System.Drawing.Size(180, 22);
+            this.CloseImg.Size = new System.Drawing.Size(118, 22);
             this.CloseImg.Text = "关闭(&C)";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.newImg);
-            this.panel2.Location = new System.Drawing.Point(528, 28);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(484, 545);
-            this.panel2.TabIndex = 2;
-            // 
-            // newImg
-            // 
-            this.newImg.Location = new System.Drawing.Point(3, 3);
-            this.newImg.Name = "newImg";
-            this.newImg.Size = new System.Drawing.Size(478, 542);
-            this.newImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.newImg.TabIndex = 0;
-            this.newImg.TabStop = false;
             // 
             // ExitWindow
             // 
             this.ExitWindow.Name = "ExitWindow";
-            this.ExitWindow.Size = new System.Drawing.Size(180, 22);
+            this.ExitWindow.Size = new System.Drawing.Size(118, 22);
             this.ExitWindow.Text = "退出(&E)";
             this.ExitWindow.Click += new System.EventHandler(this.ExitWindow_Click);
             // 
@@ -144,14 +127,6 @@
             this.几何变换JToolStripMenuItem.Name = "几何变换JToolStripMenuItem";
             this.几何变换JToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.几何变换JToolStripMenuItem.Text = "几何变换(&J)";
-            // 
-            // 灰度变换HToolStripMenuItem
-            // 
-            this.灰度变换HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.灰度化处理DToolStripMenuItem});
-            this.灰度变换HToolStripMenuItem.Name = "灰度变换HToolStripMenuItem";
-            this.灰度变换HToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.灰度变换HToolStripMenuItem.Text = "灰度变换(&H)";
             // 
             // PingYI
             // 
@@ -174,18 +149,45 @@
             this.ShuiPing.Name = "ShuiPing";
             this.ShuiPing.Size = new System.Drawing.Size(180, 22);
             this.ShuiPing.Text = "水平镜像(&S)";
+            this.ShuiPing.Click += new System.EventHandler(this.ShuiPing_Click);
             // 
             // ChuiZhi
             // 
             this.ChuiZhi.Name = "ChuiZhi";
             this.ChuiZhi.Size = new System.Drawing.Size(180, 22);
             this.ChuiZhi.Text = "垂直镜像(&C)";
+            this.ChuiZhi.Click += new System.EventHandler(this.ChuiZhi_Click);
+            // 
+            // 灰度变换HToolStripMenuItem
+            // 
+            this.灰度变换HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.灰度化处理DToolStripMenuItem});
+            this.灰度变换HToolStripMenuItem.Name = "灰度变换HToolStripMenuItem";
+            this.灰度变换HToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.灰度变换HToolStripMenuItem.Text = "灰度变换(&H)";
             // 
             // 灰度化处理DToolStripMenuItem
             // 
             this.灰度化处理DToolStripMenuItem.Name = "灰度化处理DToolStripMenuItem";
-            this.灰度化处理DToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.灰度化处理DToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.灰度化处理DToolStripMenuItem.Text = "灰度化处理(&D)";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.newImg);
+            this.panel2.Location = new System.Drawing.Point(528, 28);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(484, 545);
+            this.panel2.TabIndex = 2;
+            // 
+            // newImg
+            // 
+            this.newImg.Location = new System.Drawing.Point(3, 3);
+            this.newImg.Name = "newImg";
+            this.newImg.Size = new System.Drawing.Size(478, 542);
+            this.newImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.newImg.TabIndex = 0;
+            this.newImg.TabStop = false;
             // 
             // MainForm
             // 

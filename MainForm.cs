@@ -116,7 +116,7 @@ namespace CV
                 {
                     for (int y = 0; y < height;y++)
                     {
-                        bitmap.SetPixel(x,y,opeBitmap.GetPixel(width-x,y));
+                        bitmap.SetPixel(x,y,opeBitmap.GetPixel(width - x,y));
                     }
                 }
                 curBitmap = new Bitmap(bitmap);

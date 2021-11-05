@@ -42,9 +42,10 @@
             this.ShuiPing = new System.Windows.Forms.ToolStripMenuItem();
             this.ChuiZhi = new System.Windows.Forms.ToolStripMenuItem();
             this.灰度变换HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.灰度化处理DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HuiDu = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.newImg = new System.Windows.Forms.PictureBox();
+            this.缩放SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oldImg)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -123,7 +124,8 @@
             // 
             this.几何变换JToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PingYI,
-            this.镜像XToolStripMenuItem});
+            this.镜像XToolStripMenuItem,
+            this.缩放SToolStripMenuItem});
             this.几何变换JToolStripMenuItem.Name = "几何变换JToolStripMenuItem";
             this.几何变换JToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.几何变换JToolStripMenuItem.Text = "几何变换(&J)";
@@ -161,16 +163,17 @@
             // 灰度变换HToolStripMenuItem
             // 
             this.灰度变换HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.灰度化处理DToolStripMenuItem});
+            this.HuiDu});
             this.灰度变换HToolStripMenuItem.Name = "灰度变换HToolStripMenuItem";
             this.灰度变换HToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.灰度变换HToolStripMenuItem.Text = "灰度变换(&H)";
             // 
-            // 灰度化处理DToolStripMenuItem
+            // HuiDu
             // 
-            this.灰度化处理DToolStripMenuItem.Name = "灰度化处理DToolStripMenuItem";
-            this.灰度化处理DToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.灰度化处理DToolStripMenuItem.Text = "灰度化处理(&D)";
+            this.HuiDu.Name = "HuiDu";
+            this.HuiDu.Size = new System.Drawing.Size(180, 22);
+            this.HuiDu.Text = "灰度化处理(&D)";
+            this.HuiDu.Click += new System.EventHandler(this.HuiDu_Click);
             // 
             // panel2
             // 
@@ -188,6 +191,13 @@
             this.newImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.newImg.TabIndex = 0;
             this.newImg.TabStop = false;
+            // 
+            // 缩放SToolStripMenuItem
+            // 
+            this.缩放SToolStripMenuItem.Name = "缩放SToolStripMenuItem";
+            this.缩放SToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.缩放SToolStripMenuItem.Text = "缩放(&S)";
+            this.缩放SToolStripMenuItem.Click += new System.EventHandler(this.缩放SToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -229,7 +239,8 @@
         private System.Windows.Forms.ToolStripMenuItem 镜像XToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ShuiPing;
         private System.Windows.Forms.ToolStripMenuItem ChuiZhi;
-        private System.Windows.Forms.ToolStripMenuItem 灰度化处理DToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HuiDu;
+        private System.Windows.Forms.ToolStripMenuItem 缩放SToolStripMenuItem;
     }
 }
 

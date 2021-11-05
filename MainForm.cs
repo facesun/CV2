@@ -116,7 +116,7 @@ namespace CV
                 {
                     for (int y = 0; y < height;y++)
                     {
-                        bitmap.SetPixel(x,y,opeBitmap.GetPixel(width - x,y));
+                        bitmap.SetPixel(x,y,opeBitmap.GetPixel(width - x - 1,y));
                     }
                 }
                 curBitmap = new Bitmap(bitmap);
@@ -140,12 +140,79 @@ namespace CV
                 {
                     for (int y = 0; y < height; y++)
                     {
-                        bitmap.SetPixel(x, y, opeBitmap.GetPixel(x, height - y));
+                        bitmap.SetPixel(x, y, opeBitmap.GetPixel(x, height - y - 1));
                     }
                 }
                 curBitmap = new Bitmap(bitmap);
                 bitmap.Dispose();
                 this.newImg.Image = curBitmap;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void HuiDu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int width = opeBitmap.Width;
+                int height = opeBitmap.Height;
+                Color color = new Color();
+                Bitmap bitmap = new Bitmap(width, height);
+                for (int x = 0; x < width; x++)
+                {
+                    for (int y = 0; y < height; y++)
+                    {
+                        color = opeBitmap.GetPixel(x, y);
+                        int r = color.R;
+                        int g = color.G;
+                        int b = color.B;
+                        int result = (int)(0.3 * r + 0.59 * g + 0.11 * b);
+
+                        bitmap.SetPixel(x, y,Color.FromArgb(result,result,result) );
+                    }
+                }
+                curBitmap = new Bitmap(bitmap);
+                bitmap.Dispose();
+                this.newImg.Image = curBitmap;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void 缩放SToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SuoFang suofang = new SuoFang();
+                //定义窗体所有者
+                suofang.Owner = this;
+                if (suofang.flag)
+                {
+                    suofang.ShowDialog();
+                    float bx = suofang.X;
+                    float by = suofang.Y;
+
+
+                    int width = opeBitmap.Width;
+                    int height = opeBitmap.Height;
+                    Bitmap bitmap = new Bitmap((int)(width * bx), (int)(height * by));
+                    for (int x = 0; x < (int)(width * bx); x++)
+                    {
+                        for (int y = 0; y < (int)(height * by); y++)
+                        {
+                            bitmap.SetPixel(x, y, opeBitmap.GetPixel((int)(x / bx), (int)(y / bx)));
+                        }
+                    }
+                    curBitmap = new Bitmap(bitmap);
+                    bitmap.Dispose();
+                    this.newImg.Image = curBitmap;
+                }
+                
             }
             catch (Exception ex)
             {

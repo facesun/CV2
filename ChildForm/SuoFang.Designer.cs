@@ -1,4 +1,4 @@
-﻿namespace CV.ChildForm
+﻿namespace CV
 {
     partial class SuoFang
     {
@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-         
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -123,8 +123,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxSfx;
-        private System.Windows.Forms.TextBox textBoxSfy;
+        public System.Windows.Forms.TextBox textBoxSfx;
+        public System.Windows.Forms.TextBox textBoxSfy;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

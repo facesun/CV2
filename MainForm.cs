@@ -188,24 +188,27 @@ namespace CV
         {
             try
             {
-                SuoFang suofang = new SuoFang();
-                //定义窗体所有者
-                suofang.Owner = this;
+                SuoFang suofang = new SuoFang
+                {
+                    //定义窗体所有者
+                    Owner = this
+                };
+                suofang.ShowDialog();
                 if (suofang.flag)
                 {
-                    suofang.ShowDialog();
-                    float bx = suofang.X;
-                    float by = suofang.Y;
+                    
+                    double bx = Convert.ToDouble(suofang.textBoxSfx.Text);
+                    double by = Convert.ToDouble(suofang.textBoxSfy.Text);
 
 
                     int width = opeBitmap.Width;
                     int height = opeBitmap.Height;
-                    Bitmap bitmap = new Bitmap((int)(width * bx), (int)(height * by));
-                    for (int x = 0; x < (int)(width * bx); x++)
+                    Bitmap bitmap = new Bitmap((int)(width * bx)+1, (int)(height * by)+1);
+                    for (int x = 0; x < width * bx; x++)
                     {
-                        for (int y = 0; y < (int)(height * by); y++)
+                        for (int y = 0; y < height * by; y++)
                         {
-                            bitmap.SetPixel(x, y, opeBitmap.GetPixel((int)(x / bx), (int)(y / bx)));
+                            bitmap.SetPixel(x, y, opeBitmap.GetPixel((int)(x / bx), (int)(y / by)));
                         }
                     }
                     curBitmap = new Bitmap(bitmap);
@@ -218,6 +221,11 @@ namespace CV
             {
                 MessageBox.Show(ex.Message, "错误提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void 旋转ZToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

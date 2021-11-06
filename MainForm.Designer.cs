@@ -41,11 +41,12 @@
             this.镜像XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShuiPing = new System.Windows.Forms.ToolStripMenuItem();
             this.ChuiZhi = new System.Windows.Forms.ToolStripMenuItem();
+            this.缩放SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.灰度变换HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HuiDu = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.newImg = new System.Windows.Forms.PictureBox();
-            this.缩放SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.旋转ZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oldImg)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -66,7 +67,7 @@
             this.oldImg.Location = new System.Drawing.Point(3, 3);
             this.oldImg.Name = "oldImg";
             this.oldImg.Size = new System.Drawing.Size(485, 539);
-            this.oldImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.oldImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.oldImg.TabIndex = 0;
             this.oldImg.TabStop = false;
             // 
@@ -125,7 +126,8 @@
             this.几何变换JToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PingYI,
             this.镜像XToolStripMenuItem,
-            this.缩放SToolStripMenuItem});
+            this.缩放SToolStripMenuItem,
+            this.旋转ZToolStripMenuItem});
             this.几何变换JToolStripMenuItem.Name = "几何变换JToolStripMenuItem";
             this.几何变换JToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.几何变换JToolStripMenuItem.Text = "几何变换(&J)";
@@ -133,7 +135,7 @@
             // PingYI
             // 
             this.PingYI.Name = "PingYI";
-            this.PingYI.Size = new System.Drawing.Size(180, 22);
+            this.PingYI.Size = new System.Drawing.Size(116, 22);
             this.PingYI.Text = "平移(&P)";
             this.PingYI.Click += new System.EventHandler(this.PingYI_Click);
             // 
@@ -143,35 +145,42 @@
             this.ShuiPing,
             this.ChuiZhi});
             this.镜像XToolStripMenuItem.Name = "镜像XToolStripMenuItem";
-            this.镜像XToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.镜像XToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.镜像XToolStripMenuItem.Text = "镜像(X)";
             // 
             // ShuiPing
             // 
             this.ShuiPing.Name = "ShuiPing";
-            this.ShuiPing.Size = new System.Drawing.Size(180, 22);
+            this.ShuiPing.Size = new System.Drawing.Size(140, 22);
             this.ShuiPing.Text = "水平镜像(&S)";
             this.ShuiPing.Click += new System.EventHandler(this.ShuiPing_Click);
             // 
             // ChuiZhi
             // 
             this.ChuiZhi.Name = "ChuiZhi";
-            this.ChuiZhi.Size = new System.Drawing.Size(180, 22);
+            this.ChuiZhi.Size = new System.Drawing.Size(140, 22);
             this.ChuiZhi.Text = "垂直镜像(&C)";
             this.ChuiZhi.Click += new System.EventHandler(this.ChuiZhi_Click);
+            // 
+            // 缩放SToolStripMenuItem
+            // 
+            this.缩放SToolStripMenuItem.Name = "缩放SToolStripMenuItem";
+            this.缩放SToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.缩放SToolStripMenuItem.Text = "缩放(&S)";
+            this.缩放SToolStripMenuItem.Click += new System.EventHandler(this.缩放SToolStripMenuItem_Click);
             // 
             // 灰度变换HToolStripMenuItem
             // 
             this.灰度变换HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.HuiDu});
             this.灰度变换HToolStripMenuItem.Name = "灰度变换HToolStripMenuItem";
-            this.灰度变换HToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.灰度变换HToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.灰度变换HToolStripMenuItem.Text = "灰度变换(&H)";
             // 
             // HuiDu
             // 
             this.HuiDu.Name = "HuiDu";
-            this.HuiDu.Size = new System.Drawing.Size(180, 22);
+            this.HuiDu.Size = new System.Drawing.Size(153, 22);
             this.HuiDu.Text = "灰度化处理(&D)";
             this.HuiDu.Click += new System.EventHandler(this.HuiDu_Click);
             // 
@@ -188,16 +197,16 @@
             this.newImg.Location = new System.Drawing.Point(3, 3);
             this.newImg.Name = "newImg";
             this.newImg.Size = new System.Drawing.Size(478, 542);
-            this.newImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.newImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.newImg.TabIndex = 0;
             this.newImg.TabStop = false;
             // 
-            // 缩放SToolStripMenuItem
+            // 旋转ZToolStripMenuItem
             // 
-            this.缩放SToolStripMenuItem.Name = "缩放SToolStripMenuItem";
-            this.缩放SToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.缩放SToolStripMenuItem.Text = "缩放(&S)";
-            this.缩放SToolStripMenuItem.Click += new System.EventHandler(this.缩放SToolStripMenuItem_Click);
+            this.旋转ZToolStripMenuItem.Name = "旋转ZToolStripMenuItem";
+            this.旋转ZToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.旋转ZToolStripMenuItem.Text = "旋转(&Z)";
+            this.旋转ZToolStripMenuItem.Click += new System.EventHandler(this.旋转ZToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -211,10 +220,12 @@
             this.Name = "MainForm";
             this.Text = "图像处理";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oldImg)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -230,7 +241,6 @@
         private System.Windows.Forms.ToolStripMenuItem OpenImg;
         private System.Windows.Forms.ToolStripMenuItem CloseImg;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox newImg;
         private System.Windows.Forms.ToolStripMenuItem ExitWindow;
         private System.Windows.Forms.ToolStripMenuItem 基本处理BToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 几何变换JToolStripMenuItem;
@@ -241,6 +251,8 @@
         private System.Windows.Forms.ToolStripMenuItem ChuiZhi;
         private System.Windows.Forms.ToolStripMenuItem HuiDu;
         private System.Windows.Forms.ToolStripMenuItem 缩放SToolStripMenuItem;
+        private System.Windows.Forms.PictureBox newImg;
+        private System.Windows.Forms.ToolStripMenuItem 旋转ZToolStripMenuItem;
     }
 }
 
